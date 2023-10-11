@@ -9,7 +9,6 @@
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 * Você tem uma máquina <Windows,Linux e macOS>.
-* Você leu [ documentação_relacionada_ao POSTMAN](https://www.postman.com/product/what-is-postman/) .
 
 ## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
@@ -28,18 +27,18 @@ Windows:
 ```
 
 
-## ☕ Usando o Projeto de PB_SPRINT 2 API SERVER-REST
+## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
-Para usar oProjeto de PB_SPRINT 2 API SERVER-REST, siga estas etapas:
+Para usar o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS, siga estas etapas:
 
 Apenas importe o arquivo para dentro do POSTMAN e por lá faça as requições que deseja testar.
 
 
 ## 🌏 Mapa mental
 
-![SERVER-REST](lindonjhonson.png)
 
-## 📫 Contribuindo para o Projeto de PB_SPRINT 2 API SERVER-REST
+
+## 📫 Contribuindo para o Projeto de PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
 Para contribuir com Projeto Projeto de PB_SPRINT 2 API SERVER-REST, siga estas etapas:
 
