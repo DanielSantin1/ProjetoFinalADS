@@ -1,8 +1,8 @@
-# PB_SPRINT 2 API SERVER-REST
+# PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Projeto de PB_SPRINT 2 API SERVER-REST
+> PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
 ## 💻 Pré-requisitos
 
@@ -11,7 +11,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você tem uma máquina <Windows,Linux e macOS>.
 * Você leu [ documentação_relacionada_ao POSTMAN](https://www.postman.com/product/what-is-postman/) .
 
-## 🚀 PB_SPRINT 2 API SERVER-REST
+## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
 Para instalar o POSTMAN, siga estas etapas:
 
