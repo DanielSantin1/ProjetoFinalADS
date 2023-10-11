@@ -30,6 +30,16 @@ npm install body-parser
 
 npm install
 
+npm install multer
+
+npm install morgan
+
+npm install cors
+
+npm install bcryptjs
+
+npm install jsonwebtoken
+
 ```
 
 
