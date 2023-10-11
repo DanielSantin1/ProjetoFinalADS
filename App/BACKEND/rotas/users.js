@@ -53,7 +53,8 @@ router.post('/login', async (req,res) => {
     if(user && bcrypt.compareSync(req.body.password, user.passwordHash)){
        const token = jwt.sign(
         {
-            userId: user.id 
+            userId: user.id,
+            isAdmin: user.isAdmin
         },
         secret,
         {expiresIn : '1d'}
@@ -64,5 +65,28 @@ router.post('/login', async (req,res) => {
     }
 
 })
+router.get(`/get/count`, async (req, res) =>{
+    const userCount = await User.countDocuments((count) => count)
+
+    if(!userCount) {
+        res.status(500).json({success: false})
+    } 
+    res.send({
+        userCount: userCount
+    });
+})
+
+router.delete('/:id', (req, res)=>{
+    user.findByIdAndRemove(req.params.id).then(user =>{
+        if(user) {
+            return res.status(200).json({success: true, message: 'O usuário foi deletado!'})
+        } else {
+            return res.status(404).json({success: false , message: "O usuário não foi encontrado!"})
+        }
+    }).catch(err=>{
+       return res.status(500).json({success: false, error: err}) 
+    })
+})
+
 
 module.exports =router;
