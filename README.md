@@ -12,19 +12,25 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
-Para instalar o POSTMAN, siga estas etapas:
+Instalação das bibliotecas, siga estas etapas:
 
-Linux e macOS:
+Bibliotecas:
+```
+npm install express
+
+npm install mongoose
+
+npm install mongodb
+
+npm install nodemon --save-dev
+
+npm install dotenv
+
+npm install body-parser
 
 ```
-https://www.postman.com/downloads/
-```
 
-Windows:
 
-```
-(https://www.postman.com/downloads/)
-```
 
 
 ## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
