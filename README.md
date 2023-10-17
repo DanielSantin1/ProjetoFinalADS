@@ -40,6 +40,11 @@ npm install bcryptjs
 
 npm install jsonwebtoken
 
+npm install -g expo-cli@3.28.5
+
+expo init NomeDoProjeto
+
+
 ```
 
 
