@@ -44,6 +44,7 @@ npm install -g expo-cli@3.28.5
 
 expo init NomeDoProjeto
 
+npm install --legacy--peer-deps
 
 ```
 
