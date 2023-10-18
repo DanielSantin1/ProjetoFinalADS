@@ -21,36 +21,52 @@ npm install express
 ```
 npm install mongoose
 ```
+```
 npm install mongodb
+```
 ```
 npm install nodemon --save-dev
 ```
+```
 npm install dotenv
 ```
+```
 npm install body-parser
-
+```
+```
 npm install
-
+```
+```
 npm install multer
-
+```
+```
 npm install morgan
-
+```
+```
 npm install cors
-
+```
+```
 npm install bcryptjs
-
+```
+```
 npm install jsonwebtoken
-
+```
+```
 npm install -g expo-cli@3.28.5
-
+```
+```
 expo init NomeDoProjeto
-
+```
+```
 npm install --legacy--peer-deps
-
+```
+```
 npm install native-base
-
+```
+```
 npm install --save native-base@2.8.2
-
+```
+```
 npm install react-native-swiper
 ```
 
