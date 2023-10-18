@@ -50,6 +50,7 @@ npm install native-base
 
 npm install --save native-base@2.8.2
 
+npm install react-native-swiper
 ```
 
 
