@@ -46,6 +46,8 @@ expo init NomeDoProjeto
 
 npm install --legacy--peer-deps
 
+npm install native-base
+
 npm install --save native-base@2.8.2
 
 ```
