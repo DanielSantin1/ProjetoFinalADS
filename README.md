@@ -69,7 +69,14 @@ npm install --save native-base@2.8.2
 ```
 npm install react-native-swiper
 ```
-
+Versão da Expo
+```
+npm install -g expo-cli@3.28.5
+```
+Versão do NODE
+```
+node-v14.15.3-x64 
+```
 
 
 
