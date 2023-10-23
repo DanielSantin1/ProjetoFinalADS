@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  View,
-  StyleSheet,
-  ActivityIndicator,
-  FlatList,
-  ScrollView,
-  Dimensions
+    View,
+    StyleSheet,
+    ActivityIndicator,
+    ScrollView,
+    Dimensions
 } from "react-native";
 import { Container, Header, Icon, Item, Input, Text } from 'native-base';
 
@@ -44,11 +43,11 @@ const ProductContainer = (props) => {
             setCategories([]);
             setActive();
             setInitialState();
-          };
-        },
+        };
+    },
         [],
-      )
-    
+    )
+
 
     const searchProduct = (text) => {
         setProductsFiltered(
@@ -114,6 +113,7 @@ const ProductContainer = (props) => {
                             {productsCtg.map((item) => {
                                 return (
                                     <ProductList
+                                        navigation={props.navigation}
                                         key={item.name}
                                         item={item}
                                     />
