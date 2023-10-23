@@ -77,8 +77,9 @@ Versão do NODE
 ```
 node-v14.15.3-x64 
 ```
-
-
+```
+npm install redux react-redux redux-devtools-extension redux-logger redux-thunk
+```
 
 ## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
