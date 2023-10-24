@@ -8,7 +8,7 @@ import {
     Button
 } from 'react-native';
 import { connect } from "react-redux";
-import * as actions from '../../Redux/Actions/cartAction';
+import * as actions from '../../Redux/Actions/cartActions';
 
 
 const { width } = Dimensions.get('window');
