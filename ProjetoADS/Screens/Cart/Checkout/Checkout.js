@@ -43,7 +43,7 @@ const Checkout =(props)=>{
             zip,
         }
 
-        props.navigation.navigate("Pagamento", {order: order })
+        props.navigation.navigate("Payment", {order: order })
     }
 
     return(
