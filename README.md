@@ -11,8 +11,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você tem uma máquina <Windows,Linux e macOS>.
 
 ## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
-
-Instalação das bibliotecas, siga estas etapas:
+bibliotecas utilizadas , siga estas etapas caso queira intala-las separadamente:
 
 Bibliotecas:
 ```
@@ -96,6 +95,14 @@ npm install redux react-redux redux-devtools-extension redux-logger redux-thunk
 ## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 
 Para usar o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS, siga estas etapas:
+
+
+```
+npm install
+```
+```
+npm install axios 
+```
 
 Apenas importe o arquivo para dentro do POSTMAN e por lá faça as requições que deseja testar.
 
