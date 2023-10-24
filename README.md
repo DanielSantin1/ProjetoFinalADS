@@ -69,10 +69,22 @@ npm install --save native-base@2.8.2
 ```
 npm install react-native-swiper
 ```
+
+```
+npm install @react-navigation/material-top-tabs
+```
+
+```
+npm install react-native-tab-view
+npm install react-native-keybord-aware-scroll-view
+```
+
 Versão da Expo
 ```
 npm install -g expo-cli@3.28.5
 ```
+
+
 Versão do NODE
 ```
 node-v14.15.3-x64 
