@@ -25,10 +25,7 @@ Para usar o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS, siga estas etap
 
 
 ```
-npm install
-```
-```
-npm install axios 
+yarn install
 ```
 
 Apenas importe o arquivo para dentro do POSTMAN e por lá faça as requições que deseja testar.
