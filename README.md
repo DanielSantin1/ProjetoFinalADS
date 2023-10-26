@@ -13,83 +13,10 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 ## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
 bibliotecas utilizadas , siga estas etapas caso queira intala-las separadamente:
 
-Bibliotecas:
-```
-npm install express
-```
-```
-npm install mongoose
-```
-```
-npm install mongodb
-```
-```
-npm install nodemon --save-dev
-```
-```
-npm install dotenv
-```
-```
-npm install body-parser
-```
-```
-npm install
-```
-```
-npm install multer
-```
-```
-npm install morgan
-```
-```
-npm install cors
-```
-```
-npm install bcryptjs
-```
-```
-npm install jsonwebtoken
-```
-```
-npm install -g expo-cli@3.28.5
-```
-```
-expo init NomeDoProjeto
-```
-```
-npm install --legacy--peer-deps
-```
-```
-npm install native-base
-```
-```
-npm install --save native-base@2.8.2
-```
-```
-npm install react-native-swiper
-```
+Apenas use o comando para instalar todas as Bibliotecas:
 
 ```
-npm install @react-navigation/material-top-tabs
-```
-
-```
-npm install react-native-tab-view
-npm install react-native-keybord-aware-scroll-view
-```
-
-Versão da Expo
-```
-npm install -g expo-cli@3.28.5
-```
-
-
-Versão do NODE
-```
-node-v14.15.3-x64 
-```
-```
-npm install redux react-redux redux-devtools-extension redux-logger redux-thunk
+yarn install
 ```
 
 ## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
