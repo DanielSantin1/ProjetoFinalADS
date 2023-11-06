@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@expo/cli": "^0.10.14"
+  }
+}
