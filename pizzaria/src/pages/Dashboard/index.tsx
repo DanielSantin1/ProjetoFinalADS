@@ -1,13 +1,10 @@
+import React from 'react';
+import { View, Text } from 'react-native'
 
-import React from "react"
-import {View, Text} from 'react-native'
 export default function Dashboard(){
-    return(
-<View>
-
-<Text> Tela do Dashboard</Text>
-
-</View>
-
-    )
+  return(
+    <View>
+      <Text>Tela Dashboard</Text>
+    </View>
+  )
 }
