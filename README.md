@@ -1,60 +1,75 @@
-# PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
+# 🍕SUJEITO PIZZA 🍕
 
-<img src="imagem.png" alt="Exemplo imagem">
+## Conteúdo
+* [Sobre a aplicação](#sobre-a-aplicação)
+* [Tecnologias](#hammer_and_wrench-tecnologias)
+* [Iniciando a Aplicação](#car-Iniciando-a-aplicação)
+* [Screenshots](#camera_flash-screenshots)
+* [Licença](#balance_scale-licença)
+* [Contato](#email-contato)
 
+## Sobre a aplicação
+Aplicação completa para pizzaria desenvolvida em 3 camadas, durante o curso [Projeto Completo NodeJS, React, React Native, TypeScript](https://www.udemy.com/course/dev-fullstack/), do prof. Matheus Fraga.<br />
+1. __Back-end__: Desenvolvido em Node.JS com Typescript, utilizando Prisma com banco de dados PostgreSQL.
+2. __Front-end__: Permite cadastrar produtos, categorias e fechar mesas. Desenvolvido em React com Next, Typescript e SASS.
+3. __Mobile__: Permite lançar o consumo das mesas. Desenvolvido em React Native com Expo e Typescript.
 
-> PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
- https://github.com/DanielSantin1
+## :hammer_and_wrench: Tecnologias
+* Back-end
+  * __Node.js__ com Typescript
+  * __Prisma ORM__ para acessar o banco de dados
+  * Autenticação __JTW__
+  * __Multer__ para upload de imagens
+* Front-end
+  * __React__ com __Next__ e Typescript
+  * __Nookies__ para armazenar cookies
+  * __SASS__ para estilização
+* Mobile
+  * __React Native__ com Expo e Typescript
+  * __AsyncStorage__ para armazenamento de chaves/valores
 
-## 💻 Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-
-* Você tem uma máquina <Windows,Linux e macOS>.
-
-## 🚀 PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
-bibliotecas utilizadas , siga estas etapas caso queira intala-las separadamente:
-
-Apenas use o comando para instalar todas as Bibliotecas:
-
+## :car: Iniciando a aplicação
+Baixe o repositório com git clone e entre na pasta do projeto.
+```bash
+$ git clone https://github.com/luiizsilverio/pizzaria
 ```
-yarn install
+
+### __Back-end__
+Na pasta backend, renomeie o arquivo _.env.local-example_ para _.env.local_<br/>
+Informe a URL da API na variável __DATABASE_URL__.<br/>
+Informe a palavra secreta da API na variável __JWT_SECRET__<br/>
+```bash
+# Instale as dependências
+$ yarn
+
+# Para iniciar a aplicação na porta 3333
+$ yarn dev
+```
+### __Front-end__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn
+
+# Para iniciar a aplicação na porta 3000
+$ yarn dev
+```
+### __Mobile__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn
+
+# Para iniciar a aplicação
+$ expo start
 ```
 
-## ☕ Usando o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
+## :camera_flash: Screenshots
+![](https://github.com/luiizsilverio/pizzaria/blob/main/web/src/assets/pizza-web.gif)
 
-Para usar o PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS, siga estas etapas:
+## :balance_scale: Licença
+Este projeto está licenciado sob a [licença MIT](LICENSE).
 
+## :email: Contato
 
-```
-yarn install
-```
-
-Apenas importe o arquivo para dentro do POSTMAN e por lá faça as requições que deseja testar.
-
-
-## 🌏 Mapa mental
-
-
-
-
-
-
-
-
-
-## 📫 Contribuindo para o Projeto de PROJETO FINAL ANALISE E DESENVOLVIMENTO DE SISTEMAS
-
-Para contribuir com Projeto Projeto de PB_SPRINT 2 API SERVER-REST, siga estas etapas:
-
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
-
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+E-mail: [**luiiz.silverio@gmail.com**](mailto:luiiz.silverio@gmail.com)
