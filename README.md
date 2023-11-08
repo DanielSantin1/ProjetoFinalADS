@@ -68,7 +68,7 @@ $ expo start
 ![](https://github.com/luiizsilverio/pizzaria/blob/main/web/src/assets/pizza-web.gif)
 
 ## :balance_scale: Licença
-Este projeto está licenciado sob a [licença MIT](LICENSE).
+Este projeto está licenciado sob a [licença MIT](LICENSE.md).
 
 ## :email: Contato
 
