@@ -28,15 +28,26 @@ export type CategoryProps = {
     id: string;
     name: string;
 }
+type ProductProps = {
+    id: string;
+    name: string;
+}
 
 type OrderRouteProps = RouteProp<RouteDetailParams, 'Order'>;
 
 export default function Order() {
     const route = useRoute<OrderRouteProps>();
     const navigation = useNavigation();
+
     const [category, setCategory] = useState<CategoryProps[] | []>([]);
     const [categorySelected, setCategorySelected] = useState<CategoryProps>();
     const [modalCategoryVisible, setModalCategoryVisible] = useState(false);
+
+    const [product, setProduct] = useState<ProductProps[] | []>([]);
+    const [prodcutSelected, setProductSelected] = useState<ProductProps | undefined>();
+    const [modalProductVisible, setModalProductVisible] = useState(false);
+
+
 
     const [amount, setAmount] = useState('1')
 
@@ -54,6 +65,23 @@ export default function Order() {
         loadInfo();
     }, [])
 
+
+    useEffect(() => {
+
+        async function loadProducts() {
+            const response = await api.get('/category/product', {
+                params: {
+                    category_id: categorySelected?.id
+                }
+            })
+            setProduct(response.data)
+            setProductSelected(response.data[0])
+
+        }
+
+        loadProducts();
+
+    }, [categorySelected])
 
 
     async function handleCloseOrder() {
@@ -74,8 +102,12 @@ export default function Order() {
 
     }
 
-    function handleChangeCategory (item:CategoryProps){
+    function handleChangeCategory(item: CategoryProps) {
         setCategorySelected(item);
+    }
+
+    function handleChangeProduct (item: ProductProps){
+        setProductSelected(item);
     }
 
     return (
@@ -96,10 +128,14 @@ export default function Order() {
                 </TouchableOpacity>
             )}
 
-            <TouchableOpacity style={styles.input}>
-                <Text style={{ color: '#FFF' }}>Pizza de calabresa</Text>
-            </TouchableOpacity>
+            {product.length !== 0 && (
+                <TouchableOpacity style={styles.input} onPress={() => setModalProductVisible(true)}>
+                    <Text style={{ color: '#FFF' }}>
+                        {prodcutSelected?.name}
+                    </Text>
+                </TouchableOpacity>
 
+            )}
             <View style={styles.qtdContainer}>
                 <Text style={styles.qtdText}>Quantidade</Text>
                 <TextInput
@@ -131,6 +167,18 @@ export default function Order() {
                     handleCloseModal={() => setModalCategoryVisible(false)}
                     options={category}
                     selectedItem={handleChangeCategory}
+                />
+            </Modal>
+
+            <Modal
+                transparent={true}
+                visible={modalProductVisible}
+                animationType='fade'
+            >
+                <ModalPicker
+                    handleCloseModal={() => setModalProductVisible(false)}
+                    options={product}
+                    selectedItem={ handleChangeProduct }
                 />
             </Modal>
 
