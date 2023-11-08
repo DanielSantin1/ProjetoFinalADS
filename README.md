@@ -31,7 +31,7 @@ Aplicação completa para pizzaria desenvolvida em 3 camadas, durante o curso [P
 ## :car: Iniciando a aplicação
 Baixe o repositório com git clone e entre na pasta do projeto.
 ```bash
-$ git clone https://github.com/luiizsilverio/pizzaria
+$ git clone https://github.com/DanielSantin1/ProjetoFinalADS
 ```
 
 ### __Back-end__
@@ -72,4 +72,4 @@ Este projeto está licenciado sob a [licença MIT](LICENSE).
 
 ## :email: Contato
 
-E-mail: [**luiiz.silverio@gmail.com**](mailto:luiiz.silverio@gmail.com)
+E-mail: [**danielsantin126264@gmail.com**](mailto:danielsantin126264@gmail.com)
