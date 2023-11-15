@@ -1,4 +1,4 @@
-import { useState,FormEvent,useContext} from 'react';
+import { useState, FormEvent, useContext } from 'react';
 
 import Head from 'next/head'
 import Image from 'next/image';
@@ -9,15 +9,15 @@ import logoImg from '../../../public/logo.svg';
 import { Input } from '../../components/ui/Input'
 import { Button } from '../../components/ui/Button'
 
-import {AuthContext} from '../../contexts/AuthContext'
+import { AuthContext } from '../../contexts/AuthContext'
 
 import Link from 'next/link';
 
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 export default function SignUp() {
-const {signUp} = useContext(AuthContext);
-
+  const { signUp } = useContext(AuthContext);
+  const specialCharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -25,76 +25,89 @@ const {signUp} = useContext(AuthContext);
 
   const [loading, setLoading] = useState(false);
 
-  async function handleSignUp(event: FormEvent){
+  async function handleSignUp(event: FormEvent) {
     event.preventDefault();
 
-    if(name === '' || email === '' || password === ''){
-      toast.error("Preencha todos os campos!")
+    if (name === '' || email === '' || password === '') {
+      toast.error("Preencha todos os campos!");
       return;
     }
 
+    if (!email.includes('@')) {
+      toast.error("O email deve conter o símbolo '@'");
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("A senha deve conter pelo menos 6 caracteres");
+      return;
+    }
+
+    if (!specialCharacters.test(password)) {
+      toast.error("A senha deve conter pelo menos um caractere especial");
+      return;
+    }
     setLoading(true);
 
     let data = {
-      name, 
+      name,
       email,
-      password
-    }
+      password,
+    };
 
+    await signUp(data);
 
-    await signUp(data)
-
-    setLoading(false)
+    setLoading(false);
   }
-  
+
   return (
     <>
-    <Head>
-      <title>Faça seu cadastro agora!</title> 
-    </Head>
-    <div className={styles.containerCenter}>
-      <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
+      <Head>
+        <title>Faça seu cadastro agora!</title>
+      </Head>
+      <div className={styles.containerCenter}>
+        <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
 
-      <div className={styles.login}>
-        <h1>Criando sua conta</h1>
+        <div className={styles.login}>
+          <h1>Criando sua conta</h1>
 
-        <form onSubmit={handleSignUp}>
-          <Input
-            placeholder="Digite seu nome"
-            type="text"
-            value={name}
-            onChange={(e)=> setName(e.target.value)}
-          />
+          <form onSubmit={handleSignUp}>
+            <Input
+              placeholder="Digite seu nome"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-          <Input
-            placeholder="Digite seu email"
-            type="text"
-            value={email}
-            onChange={(e)=> setEmail(e.target.value)}
-          />
+            <Input
+              placeholder="Digite seu email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <Input
-            placeholder="Sua senha"
-            type="password"
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
-          />
-          
-          <Button
-            type="submit"
-            loading={loading}
+            <Input
+              placeholder="Sua senha"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          >
-            Cadastrar
-          </Button>
-        </form>
+            <Button
+              type="submit"
+              loading={loading}
 
-        <Link href="/" legacyBehavior>
-           <a className={styles.text}>Já possui uma conta? Faça login!</a>
-        </Link>
+            >
+              Cadastrar
+            </Button>
+          </form>
 
+          <Link href="/" legacyBehavior>
+            <a className={styles.text}>Já possui uma conta? Faça login!</a>
+          </Link>
+
+        </div>
       </div>
-    </div>
     </>
   )
 }

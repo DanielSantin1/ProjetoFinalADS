@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import Head from 'next/head';
 import styles from './styles.module.scss';
@@ -18,9 +18,11 @@ type OrderProps = {
   status: boolean;
   draft: boolean;
   name: string | null;
+  done: boolean;
 }
 
-interface HomeProps{
+
+interface HomeProps {
   orders: OrderProps[];
 }
 
@@ -29,14 +31,14 @@ export type OrderItemProps = {
   amount: number;
   order_id: string;
   product_id: string;
-  product:{
+  product: {
     id: string;
     name: string;
     description: string;
     price: string;
     banner: string;
   }
-  order:{
+  order: {
     id: string;
     table: string | number;
     status: boolean;
@@ -44,48 +46,76 @@ export type OrderItemProps = {
   }
 }
 
-export default function Dashboard({ orders }: HomeProps){
+export default function Dashboard({ orders }: HomeProps) {
 
   const [orderList, setOrderList] = useState(orders || [])
+
+  const [completeOrderList, setCompleteOrderList] = useState(orders || [])
 
   const [modalItem, setModalItem] = useState<OrderItemProps[]>()
   const [modalVisible, setModalVisible] = useState(false);
 
 
-  function handleCloseModal(){
+  useEffect(() => {
+    // Ao carregar, separe os pedidos Concluidos
+    const completedOrders = orders.filter(order => order.done);
+    setCompleteOrderList(completedOrders);
+  }, [orders]);
+
+
+  function handleCloseModal() {
     setModalVisible(false);
   }
 
-  async function handleOpenModalView(id: string){
-   
-     const apiClient = setupAPIClient(); 
+  async function handleOpenModalView(id: string) {
 
-     const response = await apiClient.get('/order/detail', {
-       params:{
-        order_id: id,
-       } 
-     })
-
-     setModalItem(response.data);
-     setModalVisible(true);
-
-  }
-
-
-  async function handleFinishItem(id: string){
     const apiClient = setupAPIClient();
-    await apiClient.put('/order/finish', {
-      order_id: id,
+
+    const response = await apiClient.get('/order/detail', {
+      params: {
+        order_id: id,
+      }
     })
 
-    const response = await apiClient.get('/orders');
+    setModalItem(response.data);
+    setModalVisible(true);
 
-    setOrderList(response.data);
-    setModalVisible(false);
   }
 
 
-  async function handleRefreshOrders(){
+  async function handleFinishItem(id: string) {
+    const apiClient = setupAPIClient();
+  
+    try {
+      // Conclui o pedido na API
+      await apiClient.put('/order/finish', {
+        order_id: id,
+      });
+  
+      // Encontre o pedido concluído na lista de pedidos atuais
+      const finishedOrder = orderList.find(order => order.id === id);
+  
+      // Atualiza a lista de pedidos ativos removendo o pedido concluído
+      setOrderList(prevOrders => prevOrders.filter(order => order.id !== id));
+  
+      // Se o pedido foi encontrado, adiciona à lista de pedidos concluídos
+      if (finishedOrder) {
+        setCompleteOrderList(prevCompleted => [...prevCompleted, { ...finishedOrder, done: true }]);
+      }
+  
+      // Não é mais necessário atualizar o estado com uma nova chamada de API, pois já atualizamos localmente
+    } catch (error) {
+      console.error("Failed to finish the order", error);
+      // Tratar erro aqui
+    }
+  
+    // Fecha o modal
+    setModalVisible(false);
+  
+  }
+
+
+  async function handleRefreshOrders() {
     const apiClient = setupAPIClient();
 
     const response = await apiClient.get('/orders')
@@ -95,57 +125,82 @@ export default function Dashboard({ orders }: HomeProps){
 
   Modal.setAppElement('#__next');
 
-  return(
+  return (
     <>
-    <Head>
-      <title>Painel - Sujeito Pizzaria</title>
-    </Head>
-    <div>
-      <Header/>
-    
-      <main className={styles.container}>
+      <Head>
+        <title>Painel - Sujeito Pizzaria</title>
+      </Head>
+      <div>
+        <Header />
 
-        <div className={styles.containerHeader}>
-          <h1>Últimos pedidos</h1>
-          <button onClick={handleRefreshOrders}>
-            <FiRefreshCcw size={25} color="#3fffa3"/>
-          </button>
-        </div>
+        <main className={styles.container}>
 
-        <article className={styles.listOreders}>
+          <div className={styles.containerHeader}>
+            <h1>Últimos pedidos</h1>
+            <button onClick={handleRefreshOrders}>
+              <FiRefreshCcw size={25} color="#3fffa3" />
+            </button>
+          </div>
 
-          {orderList.length === 0 && (
-            <span className={styles.emptyList}>
-              Nenhum pedido aberto foi encontrado...
-            </span>
-          )}
+          <article className={styles.listOrders}>
 
-          {orderList.map( item => (
-            <section  key={item.id} className={styles.orderItem}> 
-              <button onClick={ () => handleOpenModalView(item.id) }>
-                <div className={styles.tag}></div>
-                <span>Mesa {item.table}</span>
-              </button>
-            </section>
-          ))}
-                 
-        </article>
+            {orderList.length === 0 && (
+              <span className={styles.emptyList}>
+                Nenhum pedido aberto foi encontrado...
+              </span>
+            )}
 
-      </main>
+            {orderList.map(item => (
+              <section key={item.id} className={styles.orderItem}>
+                <button onClick={() => handleOpenModalView(item.id)}>
+                  <div className={styles.tag}></div>
+                  <span>Mesa {item.table}</span>
+                </button>
+              </section>
+            ))}
 
-      { modalVisible && (
-        <ModalOrder
-          isOpen={modalVisible}
-          onRequestClose={handleCloseModal}
-          order={modalItem}
-          handleFinishOrder={ handleFinishItem }
-        />
-      )}
+          </article>
+          <div className={styles.containerHeader}>
+            <h1>Pedidos concluidos</h1>
+            <button onClick={handleRefreshOrders}>
+              <FiRefreshCcw size={25} color="#3fffa3" />
+            </button>
+          </div>
 
-    </div>
+          <article className={styles.listOrders}>
+
+            {completeOrderList.length === 0 && (
+              <span className={styles.emptyList}>
+                Nenhum pedido concluido foi encontrado...
+              </span>
+            )}
+
+            {completeOrderList.map(item => (
+              <section key={item.id} className={styles.orderItem}>
+                <button onClick={() => handleOpenModalView(item.id)}>
+                  <div className={styles.tag}></div>
+                  <span>Mesa {item.table}</span>
+                </button>
+              </section>
+            ))}
+
+              </article>
+        </main>
+
+        {modalVisible && (
+          <ModalOrder
+            isOpen={modalVisible}
+            onRequestClose={handleCloseModal}
+            order={modalItem}
+            handleFinishOrder={handleFinishItem}
+          />
+        )}
+
+      </div>
     </>
   )
 }
+
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
   const apiClient = setupAPIClient(ctx);

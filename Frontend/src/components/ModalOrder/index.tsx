@@ -10,9 +10,10 @@ interface ModalOrderProps{
   onRequestClose: () => void;
   order: OrderItemProps[];
   handleFinishOrder: (id: string) => void;
+
 }
 
-export function ModalOrder({ isOpen, onRequestClose, order, handleFinishOrder  }: ModalOrderProps){
+export function ModalOrder({ isOpen, onRequestClose, order, handleFinishOrder }: ModalOrderProps){
 
   const customStyles = {
     content:{
