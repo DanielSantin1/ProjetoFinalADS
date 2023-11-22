@@ -49,7 +49,7 @@ Execute esse comando no diretório da pasta pelo prompt do CMDER.
 
 ## 📫 Contribuindo para o Projeto Final ADS
 
-Para contribuir com Projeto Calculadora em Ruby, siga estas etapas:
+Para contribuir com Projeto Projeto Final ADS, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
