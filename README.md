@@ -45,7 +45,7 @@ expo start
 Execute esse comando no diretório da pasta pelo prompt do CMDER.
 
 ## 🌏 Mapa mental
-![Sujeito Pizza]([[github.com/DanielSantin1/ProjetoFinalADS/edit/main/](https://github.com/DanielSantin1/ProjetoFinalADS/edit/main/SujeitoPizza)](https://github.com/DanielSantin1/ProjetoFinalADS/blob/main/Sujeito%20Pizza.png))
+![Sujeito Pizza](https://github.com/DanielSantin1/ProjetoFinalADS/blob/main/Sujeito%20Pizza.png)
 
 ## 📫 Contribuindo para o Projeto Final ADS
 
