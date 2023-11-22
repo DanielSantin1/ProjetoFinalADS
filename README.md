@@ -1,70 +1,53 @@
 
-# Challenge 6 em RUBY
+# Projeto Final ADS
 
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Projeto de teste no site BugBank em RUBY.
+> Projeto Final ADS.
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-* Você instalou a versão mais recente de <Ruby 2.5.3-1/ Ruby, Ruby Solargraph/Cucumber/Gherking>
+* Você instalou a versão mais recente de <node,next.js, expo>
 * Você tem uma máquina <Windows,Linux e macOS>.
-* Você leu [ documentação_relacionada_a Ruby](http://rubyinstaller.org/downloads/)/[ documentação_relacionada_a_gem](https://rspec.info/documentation/3.12/rspec-expectations/)/[ documentação_relacionada_ao_projeto](https://rubyinstaller.org/) .
 
 ## 🚀 Instalando Challenge 6 em Ruby
 
-Para instalar o Challenge 6 em Ruby, siga estas etapas:
+Para instalar o Projeto Final ADS, siga estas etapas:
 
 Linux e macOS:
 
 ```
-bundle install
+yarn install
 ```
 
-```
-gem install bundler
-```
 
 Windows:
 
 ```
-bundle install
+yarn install
 ```
 
-```
-gem install bundler
-```
+## ☕ Usando o Projeto Final ADS
 
-## ☕ Usando o Challenge 6 em Ruby
+Para usar o Projeto Final ADS, siga estas etapas:
 
-Para usar o Challenge 6 em Ruby, siga estas etapas:
-
-Testando por @TAG de cenário:
+no FRONTEND e no BACKEND:
 ```
- cucumber -p prd -p headless -t@extrato
+yarn dev
 ```
+No App mobile: 
 ```
- cucumber -p prd -p headless -t@login
-```
-```
- cucumber -p prd -p headless -t@Registro
-```
-
-Testando o projeto inteiro:
-
-```
- cucumber -p prd -p headless 
+expo start
 ```
 
 Execute esse comando no diretório da pasta pelo prompt do CMDER.
 
 ## 🌏 Mapa mental
 
-![BugBank](https://github.com/DanielSantin1/Challenge-6---Compass-UOL/assets/86211080/41ad9aea-7c15-429f-b677-bc404ba40cd3)
 
-## 📫 Contribuindo para o Challenge 6 em Ruby
+## 📫 Contribuindo para o Projeto Final ADS
 
 Para contribuir com Projeto Calculadora em Ruby, siga estas etapas:
 
