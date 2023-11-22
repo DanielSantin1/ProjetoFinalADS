@@ -12,7 +12,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente de <node,next.js, expo>
 * Você tem uma máquina <Windows,Linux e macOS>.
 
-## 🚀 Instalando Challenge 6 em Ruby
+## 🚀 Instalando o Projeto Final ADS
 
 Para instalar o Projeto Final ADS, siga estas etapas:
 
