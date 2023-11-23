@@ -40,6 +40,9 @@ Para usar o Projeto Final ADS, siga estas etapas:
 
 no FRONTEND e no BACKEND:
 ```
+npm start
+```
+```
 yarn dev
 ```
 No App mobile: 
