@@ -22,11 +22,16 @@ Linux e macOS:
 yarn install
 ```
 
-
+```
+npm install
+```
 Windows:
 
 ```
 yarn install
+```
+```
+npm install
 ```
 
 ## ☕ Usando o Projeto Final ADS
